@@ -79,16 +79,6 @@ void __fastcall__ ppu_mask(unsigned char mask);
 
 unsigned char __fastcall__ ppu_system(void);
 
-//while(h<h1){
-//ppu_off();		
-	
-//vram_adr(NTADR_A(x1/8,y1/8));
-//vram_fill(aaa,w1/8);
-
-//h++;
-//y1++;
-///ppu_on_all();
-///}
 
 
 //clear OAM buffer, all the sprites are hidden
@@ -294,7 +284,6 @@ void __fastcall__ delay(unsigned char frames);
 #define NT_UPD_EOF		0xff
 
 //macro to calculate nametable address from X,Y in compile time
-#define value =  (topleft << 0) | (topright << 2) | (bottomleft << 4) | (bottomright << 6)
 
 #define NTADR_A(x,y) 	(NAMETABLE_A|(((y)<<5)|(x)))
 #define NTADR_B(x,y) 	(NAMETABLE_B|(((y)<<5)|(x)))
