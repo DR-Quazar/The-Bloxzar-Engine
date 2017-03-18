@@ -174,10 +174,14 @@ while(1){
 		if(yy<yyh-1){jump2=0;hold=0;}
     	if(ii&PAD_A)hold++;
 	
-if(level==1&&ww==0){draw_nam(Level_Data1);ww=1;c=0;}
-if(level==2&&w==0){draw_nam(Level_Data2);w=1;c=0;}
+if(level==1&&www==0){draw_nam(Level_Data1);www=1;c=0;}
+if(level==2&&www==1){draw_nam(Level_Data2);www=0;c=0;}
 if(level==3&&www==0){draw_nam(Level_Data3);www=1;c=0;}
 if(level==4&&www==1){draw_nam(Level_Data4);www=0;c=0;}
+if(level==5&&www==0){draw_nam(Level_Data5);www=1;c=0;}
+if(level==6&&www==1){draw_nam(Level_Data6);www=0;c=0;}
+
+
 
 		 
 if(playfeld[((yy/8)<<5)|(xx/8)]==0x08||playfeld[((yy/8)<<5)|(xx/8)]==0x09||playfeld[((yy/8)<<5)|(xx/8)]==0x18||playfeld[((yy/8)<<5)|(xx/8)]==0x19){music_pause(1);for(iii=4; iii<9; iii++){pal_bright(iii);ppu_wait_nmi();delay(4);sfx_play(1,2); }reserect(1);c=0;delay(20);level++;oam_clear();for(iii=8; iii>3; iii--){pal_bright(iii);ppu_wait_nmi();delay(4);sfx_play(3,1);}delay(40);music_pause(0);}						
@@ -194,7 +198,7 @@ if(playfeld[((yy/8)<<5)|(xx/8)]>0x59&&playfeld[((yy/8)<<5)|(xx/8)]<0x73){reserec
 		if(clock>10)bank_bg(1); else bank_bg(0);
 		
 		
-if(a_num==927&&c==0){a_num=0;}else if(c==0){ a_num++;a_num++;a_num++;	x=(a_num%32)*8;y=(a_num/32)*8;}
+if(a_num==927&&c==0){a_num=240;}else if(c==0){ a_num++;a_num++;a_num++;	x=(a_num%32)*8;y=(a_num/32)*8;}
 if(playfeld[a_num]==0x74){c=1;}
 
 if(c==1){oam_meta_spr(x+8,y,8,metasprite_list[0]);collide(x,y+3,xx,yy,8,24,8,8);}
